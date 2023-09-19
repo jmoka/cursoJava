@@ -1,0 +1,55 @@
+package aplication;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.DB;
+
+public class Program {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection conn = null;
+		Statement st = null;
+		
+		try {
+			conn = DB.getConnection();
+			st = conn.createStatement();
+			System.out.println("teste");
+			int rows1 = st.executeUpdate("UPDATE saller SET BaseSalary = 2090 WHERE DepertmentId = 1");
+			System.out.println("rows1 " + rows1 );	
+			int num = 1;
+			if(num < 2) {
+				throw new db.DbException("erro fake");
+			};
+			
+			int rows2 = st.executeUpdate("UPDATE saller SET BaseSalary = 3090 WHERE DepertmentId = 2");
+		
+			System.out.println("rows1 " + rows1 );	
+			System.out.println("rows2 " + rows2 );		
+			
+		}catch(SQLException e) {
+			
+		
+			
+			String msg = "Nao foi possivel Deletar o Campo Pai, verifique se nao possui chave estrangeira associada";
+			
+		
+			
+		}
+		
+		finally {
+			DB.closeStatement(st);			
+			DB.closeConnection();
+		};
+		
+	
+
+	}
+
+	public static void teste() {
+		System.out.println("teste");
+	};
+
+}

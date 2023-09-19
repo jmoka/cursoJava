@@ -1,0 +1,67 @@
+package aplication;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.DB;
+
+public class Program {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection conn = null;
+		Statement st = null;
+		
+		try {
+			
+			conn = DB.getConnection();
+			
+			// setAutoCommit (false);
+			
+		//	conn.setAutoCommit(false);
+			
+			st = conn.createStatement();
+			
+			
+			System.out.println("teste");
+			int rows1 = st.executeUpdate("UPDATE seller SET BaseSalary = 5000 WHERE DepartmentId = 1");
+			
+			int num = 1;
+			if(num < 2) {
+				throw new SQLException();
+			};
+			
+			int rows2 = st.executeUpdate("UPDATE seller SET BaseSalary = 4000 WHERE DepartmentId = 2");
+		
+			System.out.println("rows1 " + rows1 );	
+			System.out.println("rows2 " + rows2 );	
+			
+		//	conn.commit();
+			
+			
+			
+			
+		}catch(SQLException e) {
+			
+		
+			System.out.println("Erro na tranzação");
+			
+		
+			
+		}
+		
+		finally {
+			DB.closeStatement(st);			
+			DB.closeConnection();
+		};
+		
+	
+
+	}
+
+	public static void teste() {
+		System.out.println("teste");
+	};
+
+}
