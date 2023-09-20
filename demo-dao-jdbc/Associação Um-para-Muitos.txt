@@ -1,0 +1,39 @@
+Exemplo 2: Associação Um-para-Muitos
+
+Suponha que você deseja modelar um sistema onde um Departamento pode ter vários Funcionarios, 
+mas cada Funcionario pertence a apenas um Departamento. Isso é uma relação de um-para-muitos:
+
+public class Departamento {
+    private String nome;
+    private List<Funcionario> funcionarios = new ArrayList<>();
+
+    // Construtor
+    public Departamento(String nome) {
+        this.nome = nome;
+    }
+
+    // Método para adicionar um Funcionario ao Departamento
+    public void adicionarFuncionario(Funcionario funcionario) {
+        funcionarios.add(funcionario);
+    }
+
+    // Outros métodos...
+}
+
+public class Funcionario {
+    private String nome;
+    private Departamento departamento;
+
+    // Construtor
+    public Funcionario(String nome, Departamento departamento) {
+        this.nome = nome;
+        this.departamento = departamento;
+    }
+
+    // Outros métodos...
+}
+
+
+Neste exemplo, a classe Departamento tem uma lista de Funcionario, indicando que um departamento pode ter 
+vários funcionários. A classe Funcionario tem uma referência ao Departamento ao qual ele pertence, 
+indicando que um funcionário pertence a apenas um departamento.

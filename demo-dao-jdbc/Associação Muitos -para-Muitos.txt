@@ -1,0 +1,47 @@
+Exemplo 1: Associação Muitos-para-Muitos
+
+Suponha que você deseja modelar um sistema onde Vendedores podem estar associados a vários Clientes, 
+e cada Cliente também pode estar associado a vários Vendedores. Essa é uma relação de muitos-para-muitos.
+Aqui está como você pode fazer isso:
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Vendedor {
+    private String nome;
+    private List<Cliente> clientes = new ArrayList<>();
+
+    // Construtor
+    public Vendedor(String nome) {
+        this.nome = nome;
+    }
+
+    // Método para associar um Cliente ao Vendedor
+    public void adicionarCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    // Outros métodos...
+}
+
+public class Cliente {
+    private String nome;
+    private List<Vendedor> vendedores = new ArrayList<>();
+
+    // Construtor
+    public Cliente(String nome) {
+        this.nome = nome;
+    }
+
+    // Método para associar um Vendedor ao Cliente
+    public void adicionarVendedor(Vendedor vendedor) {
+        vendedores.add(vendedor);
+    }
+
+    // Outros métodos...
+}
+
+
+Neste exemplo, a classe Vendedor tem uma lista de Cliente e a classe Cliente tem uma 
+lista de Vendedor. Isso permite que você associe vários clientes a um vendedor e vários vendedores a um cliente.

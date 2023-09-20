@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="com.mysql.cj.exceptions.DeadlockTimeoutRollbackMarker"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="db.DbException"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
 </qualifiedTypeNameHistroy>
