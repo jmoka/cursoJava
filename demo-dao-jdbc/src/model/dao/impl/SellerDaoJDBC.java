@@ -60,21 +60,12 @@ public class SellerDaoJDBC implements SellerDao {
 				// O DEPARTAMENTO (DEPARTMENT) E O VENDEDOR ( SELLER)
 				
 				// ESTANCIAÇÃO DEPARTMENT
-				Department dep = new Department();
-				dep.setId(rs.getInt("DepartmentId"));
-				dep.setName(rs.getString("Depname"));
+				Department dep = instantiateDepartment(rs);
 				
 				// ESTANCIAÇÃO SELLER
-				Seller obj = new Seller();
-				obj.setId(rs.getInt("id"));
-				obj.setName(rs.getString("Name"));
-				obj.setEmail(rs.getString("Email"));
-				obj.setBaseSalary(rs.getDouble("BaseSalary"));
-				obj.setBrithDate(rs.getDate("BirthDate"));
-				obj.setDepartment(dep);
-				return obj;	
+				Seller obj = instantiateSaller(rs, dep);					
 				
-				
+				return obj;			
 			}
 			return null;
 		}
@@ -88,6 +79,29 @@ public class SellerDaoJDBC implements SellerDao {
 		
 		
 			}
+	
+
+
+	private Seller instantiateSaller(ResultSet rs, Department dep) throws SQLException {
+		Seller obj = new Seller();
+		obj.setId(rs.getInt("id"));
+		obj.setName(rs.getString("Name"));
+		obj.setEmail(rs.getString("Email"));
+		obj.setBaseSalary(rs.getDouble("BaseSalary"));
+		obj.setBrithDate(rs.getDate("BirthDate"));
+		obj.setDepartment(dep);		
+		return obj;
+	}
+
+	// tem que propagar a excecão
+	private Department instantiateDepartment(ResultSet rs) throws SQLException {
+		Department dep = new Department();
+		dep.setId(rs.getInt("DepartmentId"));
+		dep.setName(rs.getString("Depname"));
+		return dep;
+	}
+
+
 
 	@Override
 	public List<Seller> findAll() {

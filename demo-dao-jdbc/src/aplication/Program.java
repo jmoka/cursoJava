@@ -11,19 +11,12 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) throws SQLException {
-		Department obj = new Department(1, "livro");
-		Department obj1 = new Department(2, "carros");
-	//	System.out.println(obj);
-		
-		
-	//	Seller seller = new Seller(1, "jota", "jota@gmail.com", new Date(), 300.00, obj1 );
-	//	System.out.println(seller);
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
+		System.out.println("=== TESTE FindById ===");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
-		
 	}
 
 }
