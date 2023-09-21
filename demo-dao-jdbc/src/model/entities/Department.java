@@ -14,7 +14,7 @@ public class Department implements Serializable {
 	private String name;
 	
 	// contrutor padrão
-	private Department() {
+	public Department() {
 		super();
 	}
 

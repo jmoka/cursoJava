@@ -75,6 +75,16 @@ public Double getBaseSalary() {
 	return baseSalary;
 }
 
+public Department getDepartment() {
+	return department;
+}
+
+
+public void setDepartment(Department department) {
+	this.department = department;
+}
+
+
 public void setBaseSalary(Double baseSalary) {
 	this.baseSalary = baseSalary;
 }

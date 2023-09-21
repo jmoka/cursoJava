@@ -10,4 +10,11 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="model.entities.Department"/>
+    <fullyQualifiedTypeName name="model.dao.impl.SellerDaoJDBC"/>
+    <fullyQualifiedTypeName name="model.dao.DepartmentDao"/>
+    <fullyQualifiedTypeName name="model.dao.SellerDao"/>
+    <fullyQualifiedTypeName name="model.dao.DaoFactory"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
 </qualifiedTypeNameHistroy>
