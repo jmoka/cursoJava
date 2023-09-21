@@ -30,7 +30,6 @@ public Seller() {
 
 
 public Seller(Integer id, String name, String email, Date brithDate, Double baseSalary, Department department) {
-	super();
 	this.id = id;
 	this.name = name;
 	this.email = email;
