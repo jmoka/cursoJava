@@ -1,7 +1,7 @@
 package aplication;
 
 import java.sql.SQLException;
-import java.util.Date;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -17,6 +17,17 @@ public class Program {
 		System.out.println("=== TESTE FindById ===");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
+		
+
+		System.out.println("\n=== TESTE FindByDepartment ===");
+		// primeiro vamos estanciar o departamento , pois é nesserário passar como parametro para se buscar o vendedores
+		// importante que se note que ao estanciar um departamento deixe em nulo o nome
+		Department department = new Department(2, null);
+		List <Seller> list = sellerDao.findBydepatment(department); // estancia em uma lista o resultado do método finBydepartment
+		for(Seller obj: list) { // percorre a lista e imprime o resultado
+			System.out.println(obj);
+		}
+		
 	}
 
 }
