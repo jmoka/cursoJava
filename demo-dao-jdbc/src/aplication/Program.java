@@ -28,6 +28,14 @@ public class Program {
 			System.out.println(obj);
 		}
 		
+		
+		System.out.println("\n=== TESTE FindAll===");
+		//  Vamos aproveitatr a lista agora recebendo o resultado de da chamada de sellerAll		
+		list = sellerDao.findAll(); // lista todos e armazena e list
+		for(Seller obj: list) { // percorre a lista e imprime o resultado
+			System.out.println(obj); 
+		}
+		
 	}
 
 }
