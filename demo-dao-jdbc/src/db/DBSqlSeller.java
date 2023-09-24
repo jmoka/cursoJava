@@ -1,6 +1,6 @@
 package db;
 
-public class DBSql {
+public class DBSqlSeller {
 	
 	public static String SqlInserir () {
 		return "INSERT INTO seller "
@@ -21,5 +21,19 @@ public class DBSql {
 				+ "FROM seller INNER JOIN department "
 				+ "ON seller.DepartmentId = department.Id " 
 				+ "ORDER BY Name ";
+	};
+	
+	public static String SqlUpdate () {
+		return "UPDATE seller " 
+				+ "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? "
+				+ "WHERE Id = ? ";
+	}
+	
+	public static String SqlDeleteId () {
+		return "DELETE FROM seller "
+				+ "WHERE Id = ? ";
 	}
 }
+
+
+

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import db.DB;
-import db.DBSql;
+import db.DBSqlSeller;
 import db.DbException;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -29,7 +29,7 @@ public class SellerDaoJDBC implements SellerDao {
 		PreparedStatement st = null; // esse recurso foi aberto PreparedStatement e precisa ser fechado
 		// após o sql , Statement.RETURN_GENERATED_KEYS retorna o valor do id inserido
 		try {
-			st = conn.prepareStatement( DBSql.SqlInserir() , Statement.RETURN_GENERATED_KEYS);  // chama o sql e o id inserido
+			st = conn.prepareStatement( DBSqlSeller.SqlInserir() , Statement.RETURN_GENERATED_KEYS);  // chama o sql e o id inserido
 			st.setString(1, obj.getName());
 			st.setString(2, obj.getEmail());
 			st.setDate(3, new java.sql.Date(obj.getBrithDate().getTime()));
@@ -63,14 +63,50 @@ public class SellerDaoJDBC implements SellerDao {
 	};
 
 	@Override
-	public void updade(Seller depObj) {
-		// TODO Auto-generated method stub
+	public void updade(Seller obj) {
+		PreparedStatement st = null; // esse recurso foi aberto PreparedStatement e precisa ser fechado
+		// após o sql , Statement.RETURN_GENERATED_KEYS retorna o valor do id inserido
+		try {
+			st = conn.prepareStatement( DBSqlSeller.SqlUpdate());  // chama o sql e o id inserido
+			st.setString(1, obj.getName());
+			st.setString(2, obj.getEmail());
+			st.setDate(3, new java.sql.Date(obj.getBrithDate().getTime()));
+			st.setDouble(4, obj.getBaseSalary());
+			st.setInt(5, obj.getDepartment().getId());
+			st.setInt(6, obj.getId());
+			
+			st.executeUpdate();
+			
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(st);
+		}
 
 	}
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement(DBSqlSeller.SqlDeleteId());
+			st.setInt(1, id);
+			int rows = st.executeUpdate();
+			
+			if(rows == 0) {
+				throw new DbException("Id nao tem no banco de dados , corrija a numeracao");
+			};
+	
+						
+		}
+		catch(SQLException e){
+			throw new DbException("Vendedor não delatado , erro ao deletar");
+		}
+		finally{
+			DB.closeStatement(st);
+		}
 
 	}
 
@@ -80,7 +116,7 @@ public class SellerDaoJDBC implements SellerDao {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement ( DBSql.SqlFindById());  // chama o sql
+			st = conn.prepareStatement ( DBSqlSeller.SqlFindById());  // chama o sql
 			st.setInt(1, id);
 			rs = st.executeQuery(); // Retorna a consulta, ou seja retorna a tabela do banco de dados
 
@@ -132,7 +168,7 @@ public class SellerDaoJDBC implements SellerDao {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement(DBSql.findAll ()); // chama o sql
+			st = conn.prepareStatement(DBSqlSeller.findAll ()); // chama o sql
 			rs = st.executeQuery(); // Retorna a consulta, ou seja retorna a tabela do banco de dados
 			List<Seller> list = new ArrayList<Seller>(); // devido um departamento poder conter varios vendedores
 															// criamos uma lista para armazenar os vendedores da
