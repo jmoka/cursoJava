@@ -116,10 +116,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 				// O DEPARTAMENTO (DEPARTMENT) E O VENDEDOR ( SELLER)
 
 				// ESTANCIAÇÃO DEPARTMENT
-				Department dep = instantiateDepartment(rs);
-
-			
-				return dep;
+				 return instantiateDepartment(rs);
 			}
 			return null;
 		} catch (SQLException e) {
@@ -134,8 +131,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 	// tem que propagar a excecão
 	private Department instantiateDepartment(ResultSet rs) throws SQLException {
 		Department dep = new Department();
-		dep.setId(rs.getInt("DepartmentId"));
-		dep.setName(rs.getString("Depname"));
+		dep.setId(rs.getInt("id"));
+		dep.setName(rs.getString("name"));
 		return dep;
 	}
 
