@@ -17,11 +17,11 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="db.DbException"/>
     <fullyQualifiedTypeName name="model.dao.impl.SellerDaoJDBC"/>
     <fullyQualifiedTypeName name="model.entities.Seller"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="model.entities.Department"/>
     <fullyQualifiedTypeName name="db.DBSql"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>
