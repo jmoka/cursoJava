@@ -32,33 +32,28 @@ public class Program2 {
 
 		System.out.println("\n=== TESTE FindAll ===");
 		List <Department> list = departmentDao.findAll(); // estancia em uma lista o resultado do método finBydepartment
-		for(Department obj: list) { // percorre a lista e imprime o resultado
+		System.out.println("Todos os Departamentos " );
+		for(Department obj: list) { // percorre a lista e imprime o resultado		
 			System.out.println(obj);
 		}
 		
-		/*
-		System.out.println("\n=== TESTE FindAll===");
-		//  Vamos aproveitatr a lista agora recebendo o resultado de da chamada de sellerAll		
-		list = sellerDao.findAll(); // lista todos e armazena e list
-		for(Seller obj: list) { // percorre a lista e imprime o resultado
-			System.out.println(obj); 
-		}
 		
-		System.out.println("\n=== TESTE Insert===");		
-		Seller newSeller = new Seller(null, "lika", "lika@lika", new Date(), 4000.00,  new Department(4, null) );
-		sellerDao.insert(newSeller);
-		System.out.println("Novo vendedor inserido = " + newSeller.getId() );
+		System.out.println("\n=== TESTE Insert===");
+		String nomeDep = "Almoxarifado";
+		department = new Department(null, nomeDep);
+		departmentDao.insert(department);
+		System.out.println("Novo departamento inserido = " + department.getId() );
 		
+
 		
 		System.out.println("\n=== TESTE Update===");
-		int id = 2;
-		Seller seller1 = sellerDao.findById(8);
-		System.out.println("fff  " + seller1);
-		seller1.setName("Loloka");
-		System.out.println(seller1);
-		sellerDao.updade(seller1);
-		System.out.println("Vendedor" + " " + seller1.getId() + " " +  "Para " + " " + seller1.getName() + " Atualizado");
-		
+		int id = 7;
+		Department department1 = departmentDao.findById(id);
+		department1.setName("Financas");
+		departmentDao.updade(department1);
+		System.out.println("Depertment" + " " + department1.getId() + " " +  "Para " + " " + department1.getName() + " Atualizado");
+	
+		/*
 		System.out.println("\n=== TESTE Delete===");
 		int id_d = 31;
 		sellerDao.deleteById(id_d);

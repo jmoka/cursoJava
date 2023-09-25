@@ -67,6 +67,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		try {
 			st = conn.prepareStatement( DBSqlDepatment.SqlUpdate());  // chama o sql e o id inserido
 			st.setString(1, obj.getName());
+			st.setInt(2, obj.getId());
 			st.executeUpdate();
 			
 		}
