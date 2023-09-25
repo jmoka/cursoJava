@@ -53,13 +53,13 @@ public class Program2 {
 		departmentDao.updade(department1);
 		System.out.println("Depertment" + " " + department1.getId() + " " +  "Para " + " " + department1.getName() + " Atualizado");
 	
-		/*
-		System.out.println("\n=== TESTE Delete===");
-		int id_d = 31;
-		sellerDao.deleteById(id_d);
-		System.out.println("Vendedor com Id " + id_d + " deletado");
 		
-		*/
+		System.out.println("\n=== TESTE Delete===");
+		int id_d = 11;
+		departmentDao.deleteById(id_d);
+		System.out.println("Departamento com Id " + id_d + " deletado");
+		
+		
 	}
 
 }
