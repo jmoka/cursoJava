@@ -55,7 +55,7 @@ public class Program2 {
 	
 		
 		System.out.println("\n=== TESTE Delete===");
-		int id_d = 11;
+		int id_d = 29;
 		departmentDao.deleteById(id_d);
 		System.out.println("Departamento com Id " + id_d + " deletado");
 		
