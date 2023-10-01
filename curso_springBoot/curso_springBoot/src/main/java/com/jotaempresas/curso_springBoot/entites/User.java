@@ -2,12 +2,15 @@ package com.jotaempresas.curso_springBoot.entites;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +19,9 @@ public class User implements Serializable {
 	
 	// cria o serializable  -  para que o objeto posso trafegar na rede , pois e transformado em byts
 	private static final long serialVersionUID = 1L;
+	
+	
+	
 	
 	// criar ao atributos
 	
@@ -29,7 +35,15 @@ public class User implements Serializable {
 	
 	
 // criar as associação
-		// nesse caso é a primeira e não possui a associação
+	// onde um usuario ( user) tem muitos pedidos(order) 
+	// e como e 1 para muitos , tem que ser veitos e instanciado uma lista
+	// criar a anotação para o mapeamento
+	
+	@OneToMany (mappedBy = "client") //(Um para muitos) e informar o nome do atributo que esta do outro lado no caso order
+	private List<Order> order = new ArrayList<>() ; // dessa forma instanciamos a lista e associamos com os pedidos
+	
+	
+// OBS : CRIAR O MÉTODO GET SOMENTE  -  POIS EM UMA COLEÇÃO TEMOS QUE APENAS CONSULTAR E NÃO TROCAR , ENTÃO NÃO SE COLOCA SET
 	
 	
 // criar os construtores
@@ -99,7 +113,13 @@ public void setPassword(String password) {
 }
 
 
-// criar os hashcode para comparar os obetos por id
+public List<Order> getOrder() {
+	return order;
+}
+	
+
+
+// criar os hashcode para comparar os objetos por id
 @Override
 public int hashCode() {
 	return Objects.hash(id);
@@ -124,7 +144,9 @@ public String toString() {
 	return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", password=" + password
 			+ "]";
 }
-	
+
+
+
 	
 // OBS tem que ser criado Recurso basico , baseado na cclasse user
 }
