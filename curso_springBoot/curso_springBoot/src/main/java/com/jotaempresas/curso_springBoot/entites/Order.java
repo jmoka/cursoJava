@@ -12,26 +12,23 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-@Entity // informa que será uma tabela do banco de dados
-@Table(name = "tb_order") // renomear o nome da tabela
-public class Order  implements Serializable{
+@Entity
+@Table(name = "tb_order")
+public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id  // informa a chave primaria id
+
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant moment;
-	
-	// criando as associações
-	// onde um pedido ( order) tem um usuario 
-	
-	
-	@ManyToOne  // ( Muitos para um )
-	@JoinColumn (name = "client_id") // informa o nome da chave estrangeira , aqui ser aarmazenado o id do cliente
-	private User client; // vem ser o atributo de associação entre a classe user
-	
-	public Order () {
+
+	@ManyToOne
+	@JoinColumn(name = "client_id")
+
+	private User client; // CLIENT ESTA MAPEADO EM USER
+
+	public Order() {
 		super();
 	}
 
@@ -87,6 +84,5 @@ public class Order  implements Serializable{
 	public String toString() {
 		return "Order [id=" + id + ", moment=" + moment + ", client=" + client + "]";
 	}
-	
 
 }
