@@ -1,19 +1,16 @@
 package com.jotaempresas.curso_springBoot.entites;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 
 @Entity
@@ -27,26 +24,22 @@ public class Category implements Serializable {
 	private Long id;
 	private String name;
 	
-	/*
-	 * @JsonIgnore
-	@OneToMany(mappedBy = "xxxxxxxxx", fetch = FetchType.EAGER)
-	private List<Order> order = new ArrayList<>();
-	 * 
-	 * 
-	 */
-	
+
+	// provisório , 	@Transient impedir que o java tente interpretar o set
+	@Transient
+	private Set<Product> products = new HashSet<>(); // instanciada
 	
 	public Category() {
 		super();
 	}
 
-
+	// não se coloca as coleções no construtor , pelo motivo de ja esta sendo inicialidada acima
 	public Category(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
+		
 	}
-
 
 	public Long getId() {
 		return id;
@@ -66,11 +59,16 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
+	
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+	
+
+	public Set<Product> getProducts() {
+		return products;
 	}
 
 
@@ -89,8 +87,14 @@ public class Category implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + "]";
+		return "Category [id=" + id + ", name=" + name + ", products=" +  "]";
 	}
+
+
+
+
+
+
 	
 	
 

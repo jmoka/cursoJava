@@ -63,12 +63,13 @@ public class User implements Serializable {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-	private List<Order> order = new ArrayList<>();
+	private List<Order> order = new ArrayList<>(); // instanciada
 
 	public User() {
 		super();
 	}
 
+	// não se coloca as coleções no construtor , pelo motivo de ja esta sendo inicialidada acima
 	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
@@ -78,7 +79,7 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-// criar os get e set
+
 	public Long getId() {
 		return id;
 	}
