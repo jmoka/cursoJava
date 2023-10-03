@@ -24,4 +24,5 @@
     <fullyQualifiedTypeName name="model.entities.Department"/>
     <fullyQualifiedTypeName name="db.DBSql"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Order"/>
 </qualifiedTypeNameHistroy>
