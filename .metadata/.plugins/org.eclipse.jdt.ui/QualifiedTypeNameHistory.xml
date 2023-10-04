@@ -25,4 +25,8 @@
     <fullyQualifiedTypeName name="db.DBSql"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Order"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Product"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.repositories.ProductRepository"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Transient"/>
 </qualifiedTypeNameHistroy>
