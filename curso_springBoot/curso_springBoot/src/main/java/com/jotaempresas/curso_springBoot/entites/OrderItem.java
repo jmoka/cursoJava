@@ -3,10 +3,12 @@ package com.jotaempresas.curso_springBoot.entites;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jotaempresas.curso_springBoot.entites.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Table;
 
 
@@ -17,9 +19,10 @@ public class OrderItem implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	// sempre que criar um id, composto a classe deve ser instanciada
 	
 	@EmbeddedId
-	private OrderItemPK id;
+	private OrderItemPK id = new OrderItemPK();
 	
 	
 	private Integer quantity;
@@ -40,6 +43,7 @@ public class OrderItem implements Serializable {
 	}
 	
 	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}

@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="db.DbIntegrityExeption"/>
     <fullyQualifiedTypeName name="com.mysql.cj.exceptions.DeadlockTimeoutRollbackMarker"/>
     <fullyQualifiedTypeName name="javax.sql.rowset.serial.SerialBlob"/>
-    <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="model.dao.DepartmentDao"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="db.DB"/>
@@ -24,16 +23,23 @@
     <fullyQualifiedTypeName name="model.entities.Department"/>
     <fullyQualifiedTypeName name="db.DBSql"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Order"/>
     <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Product"/>
     <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.repositories.ProductRepository"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="jakarta.persistence.JoinTable"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
     <fullyQualifiedTypeName name="jakarta.persistence.ManyToMany"/>
     <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Transient"/>
     <fullyQualifiedTypeName name="jakarta.annotation.Generated"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Order"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Embeddable"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.JoinColumnOrFormula"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EmbeddedId"/>
 </qualifiedTypeNameHistroy>

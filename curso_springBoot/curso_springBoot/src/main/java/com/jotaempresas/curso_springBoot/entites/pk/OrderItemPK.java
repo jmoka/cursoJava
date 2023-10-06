@@ -5,10 +5,12 @@ import java.util.Objects;
 
 import org.hibernate.annotations.JoinColumnOrFormula;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jotaempresas.curso_springBoot.entites.Order;
 import com.jotaempresas.curso_springBoot.entites.Product;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
@@ -25,16 +27,13 @@ public class OrderItemPK implements Serializable{
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "order_id")
+	@JoinColumn(name = "order_id" )
 	private Order order;
 
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
-	
-	
-	
-	
+		
 	public Order getOrder() {
 		return order;
 	}
