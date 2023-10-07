@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jotaempresas.curso_springBoot.entites.enuns.OrderStatus;
 
 import jakarta.persistence.CascadeType;
@@ -40,7 +41,8 @@ public class Order implements Serializable {
 	@OneToMany(mappedBy = "id.order", fetch = FetchType.EAGER)
 	private Set<OrderItem> items = new HashSet<>();
 
-	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+	@JsonIgnore
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 
 	private Payment payment;
 
