@@ -14,6 +14,7 @@ import com.jotaempresas.curso_springBoot.entites.OrderItem;
 import com.jotaempresas.curso_springBoot.entites.Payment;
 import com.jotaempresas.curso_springBoot.entites.Product;
 import com.jotaempresas.curso_springBoot.entites.User;
+import com.jotaempresas.curso_springBoot.entites.enuns.OrderStatus;
 import com.jotaempresas.curso_springBoot.repositories.CategoryRepository;
 import com.jotaempresas.curso_springBoot.repositories.OrderItemRepository;
 import com.jotaempresas.curso_springBoot.repositories.OrderRepository;
@@ -75,9 +76,9 @@ public class TesetConfig implements  CommandLineRunner{
 	
 		userRepository.saveAll(Arrays.asList(u1, u2, u3));
 		
-		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), u1);
-		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), u2);
-		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), u1);
+		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"),OrderStatus.DELIVERED, u1);
+		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"),OrderStatus.CANCELED, u2);
+		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.SHIPPED, u1);
 		
 		orderRepository.saveAll(Arrays.asList(o1,o2,o3));
 		

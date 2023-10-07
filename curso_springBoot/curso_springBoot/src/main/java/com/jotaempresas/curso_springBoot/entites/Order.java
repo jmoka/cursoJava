@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.jotaempresas.curso_springBoot.entites.enuns.OrderStatus;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -31,33 +31,31 @@ public class Order implements Serializable {
 	private Long id;
 	private Instant moment;
 
-
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client; // CLIENT ESTA MAPEADO EM USER
-	
+
 	// fazer com que o pedido tenha acesso aos seus itens
-	
-	
-	
+
 	@OneToMany(mappedBy = "id.order", fetch = FetchType.EAGER)
 	private Set<OrderItem> items = new HashSet<>();
-	
-	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
-		
-	private Payment payment;
-	
 
+	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+
+	private Payment payment;
+
+	private Integer orderEstatus;
 
 	public Order() {
-		super();
 	}
 
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
+		setOrderEstatus(orderStatus);
 		this.client = client;
+	
 	}
 
 	public Long getId() {
@@ -83,17 +81,29 @@ public class Order implements Serializable {
 	public void setClient(User client) {
 		this.client = client;
 	}
-	
-	public Set<OrderItem>getItems(){
+
+	public Set<OrderItem> getItems() {
 		return items;
 	}
-	
+
 	public Payment getPayment() {
 		return payment;
 	}
 
 	public void setPayment(Payment payment) {
 		this.payment = payment;
+	}
+
+	public OrderStatus getOrderEstatus() {
+		return OrderStatus.valueOf(orderEstatus) ;
+	}
+
+
+	public void setOrderEstatus(OrderStatus orderEstatus) {
+		if (orderEstatus != null ) {
+			this.orderEstatus = orderEstatus.getCode();
+		}
+		
 	}
 
 	@Override
@@ -118,9 +128,5 @@ public class Order implements Serializable {
 		return "Order [id=" + id + ", moment=" + moment + ", client=" + client + ", items=" + items + ", payment="
 				+ payment + "]";
 	}
-
-
-
-
 
 }
