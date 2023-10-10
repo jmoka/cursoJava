@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+#Dados SpringBoot
+.metadata
+
 # Log file
 *.log
 
