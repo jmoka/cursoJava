@@ -42,4 +42,10 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EmbeddedId"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.MapsId"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.Payment"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="com.jotaempresas.curso_springBoot.entites.enuns.OrderStatus"/>
 </qualifiedTypeNameHistroy>

@@ -43,7 +43,6 @@ public class Order implements Serializable {
 
 	@JsonIgnore
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
 	private Payment payment;
 
 	private Integer orderEstatus;
@@ -106,6 +105,14 @@ public class Order implements Serializable {
 			this.orderEstatus = orderEstatus.getCode();
 		}
 		
+	}
+	
+	public Double getTotal() {
+		double sum = 0;
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
 	}
 
 	@Override
