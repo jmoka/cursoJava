@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.jotaempresas.curso_springBoot.entites.User;
 import com.jotaempresas.curso_springBoot.repositories.UserRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 
@@ -28,5 +30,22 @@ public class UserService {
 	public User insert(User objUser) {
 		return repository.save(objUser);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 
+	public User update(Long id, User obj) {
+	    User entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
+	    updateData(entity, obj);
+	    return repository.save(entity);
+	}
+
+	private void updateData(User entity, User obj) {
+		entity.setName(obj.getName());
+		entity.setEmail(obj.getEmail());
+		entity.setPhone(obj.getPhone());
+		
+		
+	}
 }
