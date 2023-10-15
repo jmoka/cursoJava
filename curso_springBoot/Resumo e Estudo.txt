@@ -1,0 +1,94 @@
+PROJETO SPRING BOOT COM JPA E HIBERNATE
+Claro, vou explicar o Spring Boot, JPA (Java Persistence API) e Hibernate, e suas funções em uma aplicação de desenvolvimento Java.
+
+1. Spring Boot:
+O Spring Boot é um projeto da família Spring Framework que simplifica o desenvolvimento de aplicativos Java. Ele fornece um ambiente de execução que facilita a criação de aplicativos autônomos e prontos para produção. O Spring Boot oferece muitas vantagens, incluindo a configuração automática, o que significa que muitos aspectos da configuração do aplicativo são feitos automaticamente com base nas dependências do projeto. Isso ajuda a acelerar o desenvolvimento e reduz a configuração manual.
+
+Funções do Spring Boot:
+- Configuração automática: Reduz a necessidade de configuração manual, permitindo que você se concentre no desenvolvimento de funcionalidades.
+- Execução autônoma: Facilita a criação de aplicativos autônomos, que podem ser executados independentemente de um contêiner de aplicativo externo.
+- Suporte a integração: Oferece suporte a uma variedade de tecnologias, incluindo bancos de dados, segurança, RESTful APIs e muito mais.
+
+2. JPA (Java Persistence API):
+A Java Persistence API (JPA) é uma especificação de Java que descreve uma interface padrão para mapeamento objeto-relacional (ORM). O JPA permite que os desenvolvedores trabalhem com objetos Java no código e, ao mesmo tempo, persistam esses objetos em um banco de dados relacional. Ele fornece uma camada de abstração sobre o banco de dados, tornando mais fácil e eficiente o acesso aos dados.
+
+Funções do JPA:
+- Mapeamento objeto-relacional: Permite que objetos Java sejam mapeados para tabelas de banco de dados e vice-versa.
+- Abstração de banco de dados: Fornece uma camada de abstração sobre o banco de dados, permitindo que os desenvolvedores trabalhem com objetos em vez de escrever SQL diretamente.
+- Gerenciamento de entidades: Gerencia o ciclo de vida das entidades (objetos JPA) no contexto da persistência, incluindo a criação, leitura, atualização e exclusão de registros no banco de dados.
+
+3. Hibernate:
+O Hibernate é uma implementação da especificação JPA e é uma das soluções mais populares para mapeamento objeto-relacional em aplicativos Java. Ele fornece uma implementação de referência da JPA, tornando-o uma escolha comum para desenvolvedores que desejam trabalhar com JPA em seus projetos.
+
+Funções do Hibernate:
+- Mapeamento objeto-relacional: O Hibernate permite que você mapeie objetos Java para tabelas de banco de dados e vice-versa, tornando o desenvolvimento de aplicativos baseados em banco de dados mais fácil e eficiente.
+- Consultas HQL (Hibernate Query Language): O Hibernate fornece sua própria linguagem de consulta, semelhante ao SQL, chamada HQL, que permite que você consulte objetos Java em vez de tabelas de banco de dados diretamente.
+- Gerenciamento de entidades: Como parte da implementação JPA, o Hibernate oferece recursos para gerenciar entidades, como persistência, carregamento preguiçoso e muito mais.
+
+Em resumo, o Spring Boot simplifica o desenvolvimento de aplicativos Java, enquanto o JPA fornece uma especificação para mapeamento objeto-relacional, e o Hibernate é uma implementação comum dessa especificação que facilita a interação com bancos de dados em aplicativos Java. Eles são frequentemente usados juntos para criar aplicativos Java robustos e eficientes com persistência de dados.
+
+- 
+=======================================================================
+PACOTES e CLASSES
+=======================================================================
+- Main
+(Classe Principal)
+	- public static void main(String[] args)
+-----------------------------------------------------------------------
+ 
+- Configuração (Config) -  Teste
+(Classe para Teste, intanciar as classes teste de inclusão de dados)
+	- public class TesetConfig implements  CommandLineRunner
+
+obs: CommandLineRunner é uma interface no Spring Framework, geralmente usada em aplicativos Spring Boot, que permite executar código quando um aplicativo é inicializado. A principal finalidade desta interface é permitir a execução de ações, tarefas ou lógica de inicialização no início da aplicação.
+
+A interface CommandLineRunner possui um único método a ser implementado:
+	void run(String... args) throws Exception;
+
+--------------------------------------------------------------------------
+
+- Entidades (Entitys)
+(Classes com os Objetos)
+	-Ordes (Order)
+		- public class Order implements Serializable 
+	-Categorias (Category)
+		- public class Category implements Serializable 
+	-Usuário (User)
+		- public class User implements Serializable 
+	-ItensOrdens (OrderItens)
+		- public class OrderItens implements Serializable 
+	-Pagamento (Payment)
+		- public class Payment implements Serializable 
+	-Produto (Product)
+		- public class Product implements Serializable 
+---------------------------------------------------------------------------
+
+- Entidades.enuns (Entitys.enuns)
+( Classe responsavel pelas classes enuns - Enum de OrderStatus)	
+
+	- public enum OrderStatus
+
+
+	-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
