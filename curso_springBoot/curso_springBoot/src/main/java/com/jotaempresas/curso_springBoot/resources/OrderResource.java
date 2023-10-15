@@ -14,7 +14,7 @@ import com.jotaempresas.curso_springBoot.servicies.OrderService;
 
 
 @RestController 
-@RequestMapping ("/orders") 
+@RequestMapping ("/orders/") 
 public class OrderResource {
 	
 	@Autowired

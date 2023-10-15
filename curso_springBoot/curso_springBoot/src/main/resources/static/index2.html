@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot e JPA / Hibernate</title>
+    <style>
+        /* Estilos CSS aqui */
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .container label {
+            margin-bottom: 5px;
+        }
+
+        .container .input-group {
+            display: flex;
+        }
+
+        .container .input-group input {
+            padding: 5px;
+            width: 70px;
+            margin-right: 10px;
+        }
+
+        .container input[type="submit"] {
+            width: auto;
+        }
+
+        /* Estilizando o link "Voltar" */
+        .back-link {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #3b5998; /* Cor do link */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Projeto web services com Spring Boot e JPA / Hibernate</h1>
+        <div class="container">
+            <form method="POST" action="/usuario">
+                <label for="numero-usuario">Digite o numero do Usuário ou Deixe em Branco para Todos:</label>
+                <div class="input-group">
+                    <input type="number" id="numero-usuario" name="numero">
+                    <input type="submit" value="Consultar">
+                </div>
+            </form>
+            <form method="POST" action="/pedido">
+                <label for="numero-pedido">Digite o numero do Pedido ou Deixe em Branco para Todos:</label>
+                <div class="input-group">
+                    <input type="number" id="numero-pedido" name="numero">
+                    <input type="submit" value="Consultar">
+                </div>
+            </form>
+            <form method="POST" action="/produto">
+                <label for="numero-produto">Digite o numero do Produto ou Deixe em Branco para Todos:</label>
+                <div class="input-group">
+                    <input type="number" id="numero-produto" name="numero">
+                    <input type="submit" value="Consultar">
+                </div>
+            </form>
+            <form method="POST" action="/categoria">
+                <label for="numero-categoria">Digite o numero da Categoria ou Deixe em Branco para Todas:</label>
+                <div class="input-group">
+                    <input type="number" id="numero-categoria" name="numero">
+                    <input type="submit" value="Consultar">
+                </div>
+            </form>
+            <form method="POST" action="/itemsPedidos">
+                <label for="numero-item">Digite o Item ou Deixe em Branco para Todos:</label>
+                <div class="input-group">
+                    <input type="number" id="numero-item" name="numero">
+                    <input type="submit" value="Consultar">
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="back-link">
+        <a href="/index.html">&lt;== Voltar</a>
+    </div>
+    <div class="contact">
+        <p>Entre em contato conosco para saber mais:</p>
+        <a href="tel:+55 91 9 96293532">+55 91 9 96293532</a> |
+        <a href="bacudigital@gmail.com">bacudigital@gmail.com</a>
+    </div>
+</body>
+</html>

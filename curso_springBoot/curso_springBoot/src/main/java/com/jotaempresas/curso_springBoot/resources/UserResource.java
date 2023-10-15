@@ -19,7 +19,7 @@ import com.jotaempresas.curso_springBoot.entites.User;
 import com.jotaempresas.curso_springBoot.servicies.UserService;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/users/")
 public class UserResource {
 
 	@Autowired

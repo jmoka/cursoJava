@@ -14,7 +14,7 @@ import com.jotaempresas.curso_springBoot.servicies.ProductService;
 
 
 @RestController 
-@RequestMapping ("/products") 
+@RequestMapping ("/products/") 
 public class ProductResource {
 	
 	@Autowired

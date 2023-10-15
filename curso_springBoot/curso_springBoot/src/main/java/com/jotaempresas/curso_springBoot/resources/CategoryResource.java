@@ -14,7 +14,7 @@ import com.jotaempresas.curso_springBoot.servicies.CategoryService;
 
 
 @RestController 
-@RequestMapping ("/categories") 
+@RequestMapping ("/categories/") 
 public class CategoryResource {
 	
 	@Autowired
