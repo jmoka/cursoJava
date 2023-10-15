@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulário de Cadastro</title>
+	<style>
+		/* Estilos CSS aqui */
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.container form {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.container label {
+			margin-bottom: 5px;
+		}
+
+		.container .input-group {
+			display: flex;
+			justify-content: center;
+		}
+
+		.container .input-group input {
+			padding: 5px;
+			margin-right: 10px;
+		}
+
+		.container .buttons {
+			display: flex;
+			justify-content: center;
+			padding-top: 5px;
+		}
+
+		.container .buttons button {
+			padding: 10px;
+			border: none;
+			cursor: pointer;
+		}
+
+		.container .buttons button.new {
+			background-color: #3498db;
+			color: white;
+			margin: 3px;
+		}
+
+		.container .buttons button.insert {
+			background-color: #27ae60;
+			color: white;
+			margin: 3px;
+		}
+
+		.container .buttons button.update {
+			background-color: #e67e22;
+			color: white;
+			margin: 3px;
+		}
+
+
+		.container .buttons button.delete {
+			background-color: #c0392b;
+			color: white;
+			margin: 3px;
+		}
+
+		.back-link {
+			background-color: #f0f0f0;
+			padding: 10px;
+			text-align: center;
+		}
+
+		.back-link a {
+			color: #3b5998;
+			/* Cor do link */
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Formulário de Cadastro</h1>
+		<div class="container">
+			<form method="POST" action="/inserir">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email">
+				<label for="phone">Phone:</label>
+				<input type="tel" id="phone" name="phone">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password">
+
+				<div class="buttons">
+					<button class="new" type="submit">Novo</button>
+					<button class="insert" type="submit">Inserir</button>
+					<button class="update" type="submit">Atualizar</button>
+					<button class="delete" type="submit">Deletar</button>
+				</div>
+			</form>
+
+		</div>
+	</header>
+	<div class="back-link">
+		<a href="/index.html">&lt;== Voltar</a>
+	</div>
+</body>
+
+</html>
